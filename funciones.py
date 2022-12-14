@@ -131,7 +131,7 @@ for i in range(0,3):
 # cuenta que el usuario puede equivocarse y enviar de parámetro un número 
 # no entero o negativo
 
-def factorial(numero):
+'''def factorial(numero):
     if numero < 0 or type(numero) != int:
         return 'Favor ingresar un numero entero positivo'
     i = 1
@@ -140,6 +140,14 @@ def factorial(numero):
         fact = fact * (numero -i)
         i+=1
     return fact
+'''
+def factorial(numero):
+    if numero < 0 or type(numero) != int:
+        return 'Favor ingresar un numero entero positivo'
+    else:
+        numero = numero * factorial(numero-1)
+    return numero
 
-for j in range(10):
-    print(factorial(j), end='-----------') 
+
+for j in range(3,5):
+    print(factorial(j)) 
